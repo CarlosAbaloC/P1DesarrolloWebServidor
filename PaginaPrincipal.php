@@ -22,13 +22,17 @@
                 <td><a>Menu de posiciones</a></td>
             </tr>
             <tr>
-                <td><a href="Ej1.php">UsuariosRegistrados2</a></td>
+                <td><a href="Ej1.php">Ejercicio1</a></td>
+            </tr>
+            <tr>
+                <td><a href="Ej2.php">Ejercicio2 y 3</a></td>
+            </tr>
+            <tr>
+                <td><a href="NuevaReceta.php">NuevaReceta</a></td>
+            </tr>
+            <tr>
+                <td><a href="ListaRecetas.php">ListaRecetas</a></td>
             </tr>
         </table>
-        <?php
-
-            echo "<h2>Hola: " . $_SESSION["usuario"] . "</h2><br><br>";
-
-        ?>
     </body>
 </html>

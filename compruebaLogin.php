@@ -13,7 +13,7 @@
 
                 $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-                $sql = "SELECT * FROM USUARIOS_PASS WHERE USUARIO = :login AND PASSWORD = :password";
+                $sql = "SELECT * FROM USUARIOS WHERE USUARIO = :login AND CONTRA = :password";
 
                 $resultado = $base->prepare($sql);
 

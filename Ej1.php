@@ -11,17 +11,18 @@ $conexionBD = new ConectarBD();
 $conexion = $conexionBD->getConexion();
 
 try {
-    $query = "SELECT NAME, ADDRESS, TELF FROM usuarios";
+    $query = "SELECT USUARIO, CONTRA, TFNO FROM usuarios";
     $statement = $conexion->prepare($query);
     $statement->execute();
     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     if (count($results) > 0) {
         echo "<table border='1'>";
-        echo "<tr><th>Nombre</th><th>Dirección</th><th>Teléfono</th></tr>";
+        echo "<tr><th>Usuario</th><th>Contraseña</th><th>Teléfono</th></tr>";
 
+        //Por cada resultado coge los tres datos de la fila
         foreach ($results as $row) {
-            echo "<tr><td>" . $row['NAME'] . "</td><td>" . $row['ADDRESS'] . "</td><td>" . $row['TELF'] . "</td></tr>";
+            echo "<tr><td>" . $row['USUARIO'] . "</td><td>" . $row['CONTRA'] . "</td><td>" . $row['TFNO'] . "</td></tr>";
         }
 
         echo "</table>";
@@ -31,6 +32,10 @@ try {
 } catch (PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
-
-$conexionBD->cerrarConexion();
+echo '
+<table border="1">
+    <tr>
+        <td><a href="PaginaPrincipal.php">Volver</a></td>
+    </tr>
+</table>';
 ?>
