@@ -20,7 +20,7 @@ INSERT INTO recetas (nombre, tiempo_preparacion, ingredientes, instrucciones, im
 VALUES ('Fajitas de Vegetales', 30, 'Pimiento, cebolla, champiñones, calabacín, maíz, t...', 'Saltea las verduras con las especias en una sartén...', NULL);
 
 INSERT INTO recetas (nombre, tiempo_preparacion, ingredientes, instrucciones, imagen)
-VALUES ('Ensalada de Lentejas y Aguacate', 15, 'Lentejas cocidas, aguacate, tomate, cebolla roja, ...', 'Mezcla las lentejas con los ingredientes picados e...', NULL);
+VALUES ('Ensalada de Patata y Aguacate', 15, 'Lentejas cocidas, aguacate, tomate, cebolla roja, ...', 'Mezcla las lentejas con los ingredientes picados e...', NULL);
 
 INSERT INTO recetas (nombre, tiempo_preparacion, ingredientes, instrucciones, imagen)
 VALUES ('Ensalada de Quinoa y Aguacate', 20, 'Quinoa, aguacate, tomate, cebolla, limón, aceite d...', 'Cocina la quinoa y luego mezcla todos los ingredientie...', NULL);
