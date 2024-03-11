@@ -44,14 +44,18 @@
                     $statement = $conexion->prepare($query);
                     $statement->execute();
                     $results = $statement->fetchAll(PDO::FETCH_ASSOC);
-    
+                    echo (int)$_SESSION["admin"];
                     if (count($results) > 0) {
                         echo "<table border='1'>";
                         echo "<tr><th>Usuario</th><th>Contraseña</th><th>Teléfono</th></tr>";
-    
+                        
                         //Por cada resultado coge los tres datos de la fila
                         foreach ($results as $row) {
-                            echo "<tr><td>" . $row['USUARIO'] . "</td><td>" . $row['CONTRA'] . "</td><td>" . $row['TFNO'] . "</td></tr>";
+                            echo "<tr><td>" . $row['USUARIO'] . "</td><td>";
+                            if ((int)$_SESSION['admin'] === 1) {
+                                echo $row['CONTRA']; 
+                            } 
+                            echo "</td><td>" . $row['TFNO'] . "</td></tr>";
                         }
     
                         echo "</table>";

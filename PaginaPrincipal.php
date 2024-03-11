@@ -27,9 +27,15 @@
             <tr>
                 <td><a href="Ej2.php">Ejercicio2 y 3</a></td>
             </tr>
+            <!--Aqui evita que accedas a crear nuevas recetas-->
+            <?php if ((int)$_SESSION["admin"] === 1): ?>
             <tr>
-                <td><a href="NuevaReceta.php">NuevaReceta</a></td>
+                <td>
+                        <a href="NuevaReceta.php">Nueva Receta</a>
+                    
+                </td>
             </tr>
+            <?php endif; ?>
             <tr>
                 <td><a href="ListaRecetas.php">ListaRecetas</a></td>
             </tr>

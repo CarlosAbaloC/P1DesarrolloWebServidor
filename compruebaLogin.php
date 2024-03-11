@@ -14,6 +14,7 @@
                 $base -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
                 $sql = "SELECT * FROM USUARIOS WHERE USUARIO = :login AND CONTRA = :password";
+                
 
                 $resultado = $base->prepare($sql);
 
@@ -27,6 +28,8 @@
 
                 $resultado -> execute();
 
+
+
                 //Con esto compruebas si esta o no registrado con un cero o un uno, cero si no lo esta, es decir no ha aparecido ninguna linea de codigo uno si lo esta
                 $numeroRegistro = $resultado ->rowCount();
 
@@ -37,7 +40,10 @@
 
                     $_SESSION["usuario"] = $_POST["login"]; //Rescata el nombre del user
 
+                    $row = $resultado->fetch(PDO::FETCH_ASSOC);
+                    $_SESSION["admin"] = (int)$row["admin"];
 
+                    
                     header("Location:PaginaPrincipal.php");
 
                 } else {

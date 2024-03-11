@@ -6,7 +6,7 @@ function validarFormulario(event) {
     if (usuario === "" || contra === "" || telefono === "") {
         alert("Rellena todos los campos");
         return false;
-    } else if (contra.length >= 4){
+    } else if (contra.length < 4){
         alert("La contraseña debe tener al menos cuatro caracteres")
         return false;
     } else if (isNaN(telefono)) {

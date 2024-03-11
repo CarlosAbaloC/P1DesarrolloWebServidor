@@ -43,10 +43,10 @@
     // Consulta para insertar la receta
     $sql = "INSERT INTO recetas (nombre, tiempo, productos, elaboracion, imagen) VALUES ('$nombre', '$tiempo', '$productos', '$elaboracion', '$ruta_archivo')";
 
-    if ($conexion->query($sql) === TRUE) {
+    if ($conexion->query($sql) === TRUE && (int)$_SESSION["admin"] === 1) {
         echo "Receta guardada correctamente";
     } else {
-        echo "Error al guardar la receta: " . $conexion->error;
+        echo "Error al guardar la receta: " . $conexion-> $error;
     }
 
     header("Location: NuevaReceta.php"); 
